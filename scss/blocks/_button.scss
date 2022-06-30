@@ -63,7 +63,7 @@
 	box-sizing : border-box;
 	
 	& .vh-desktop {
-		background-image   : url("../../img/visually-impaired.svg");
+		background-image   : url("../img/visually-impaired.svg");
 		background-position: center center;
 		background-size    : 80% 80%;
 		background-repeat  : no-repeat;
@@ -168,7 +168,7 @@
 		display            : inline-block;
 		color              : $color-text;
 		background-color   : $color-accent1;
-		background-image   : url("../../img/simple-line-icons_eye.svg");
+		background-image   : url("../img/simple-line-icons_eye.svg");
 		background-position: 15px 10px;
 		background-repeat  : no-repeat;
 	}
