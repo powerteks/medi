@@ -68,7 +68,10 @@
 	padding        : 10px;
 	display        : inline-block;
 	position       : relative;
+	text-decoration: none;
+	text-align     : center;
 	font-size      : 0.85em;
+	color          : $color-text-accent3;
 	text-decoration: none;
 	text-align     : center;
 
@@ -135,10 +138,6 @@
 	.menu-footer__item__social {
 		width: 40%;
 	}
-
-	// .menu-footer__link {
-	// 	margin: 0 0 10px;
-	// }
 }
 
 @media (min-width: $min-desktop) {
@@ -175,8 +174,6 @@
 		margin         : 12px 0 12px 10px;
 		padding        : 26px 18px 20px;
 		position       : relative;
-		text-decoration: none;
-		text-align     : center;
 		font-size      : 0.86em;
 		flex-grow      : 1;
 

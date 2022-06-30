@@ -1323,6 +1323,7 @@ img {
   position: absolute;
   top: 0;
   right: 10px;
+  width: auto;
   height: 100%;
   -webkit-box-shadow: 0 0 10px #cccccc;
           box-shadow: 0 0 10px #cccccc;
@@ -2300,7 +2301,10 @@ img {
   padding: 10px;
   display: inline-block;
   position: relative;
+  text-decoration: none;
+  text-align: center;
   font-size: 0.85em;
+  color: #020202;
   text-decoration: none;
   text-align: center;
 }
@@ -2419,8 +2423,6 @@ img {
     margin: 12px 0 12px 10px;
     padding: 26px 18px 20px;
     position: relative;
-    text-decoration: none;
-    text-align: center;
     font-size: 0.86em;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;

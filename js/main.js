@@ -14,7 +14,7 @@ if ( mediaQueryMxDesktop.matches ) {
 		const      nav = document.querySelector('.nav');
 		const navItems = document.querySelectorAll('.nav__item:not(.nav__item__button)');
 
-		document.querySelector('.nav__button-toggle').addEventListener( 'click', event => {console.log(12);
+		document.querySelector('.nav__button-toggle').addEventListener( 'click', event => {
 			if ( nav.classList.contains('nav_close') ) {
 				nav.classList.add('nav_animate-open');
 				nav.classList.remove('nav_close');
@@ -157,7 +157,7 @@ anchors.forEach( anchor => {
 });
 
 //   working custom select
-if (document.querySelector('.form__select_js') != null) {
+if (document.querySelector('.form__select_native-js') != null) {
 	const elSelectCustomNative = document.getElementsByClassName('form__select_native-js')[0];
 	const       elSelectCustom = document.getElementsByClassName('form__select_js')[0];
 	const    elSelectCustomBox = elSelectCustom.children[0];

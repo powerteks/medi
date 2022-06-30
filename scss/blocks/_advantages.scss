@@ -86,6 +86,7 @@
 	position  : absolute;
 	top       : 0;
 	right     : 10px;
+	width     : auto;
 	height    : 100%;
 	box-shadow: 0 0 10px #cccccc;
 	opacity   : 0;
@@ -99,8 +100,8 @@
 }
 
 .advantages__item .image {
-	width: auto;
-	height: 100%;
+	width   : auto;
+	height  : 100%;
 	overflow: hidden;
 }
 
