@@ -2,8 +2,8 @@
 	@include flex(row, stretch);
 	@include reset-list;
 	
-	position   : relative;
-	flex-wrap  : wrap;
+	position : relative;
+	flex-wrap: wrap;
 	
 	&::before {
 		display         : block;
@@ -188,7 +188,7 @@
 
 		&:focus::before,
 		&:hover::before {
-			bottom    : 20px;
+			bottom: 20px;
 		}
 	}
 }
