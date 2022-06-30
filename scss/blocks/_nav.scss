@@ -1,0 +1,174 @@
+.nav {
+	@include reset-list;
+
+	position  : relative;
+	text-align: center;
+}
+
+.nav__button-toggle {
+	padding         : 20px 0 10px;
+	border          : none;
+	font-family     : $main-font-family;
+	font-size       : 1.2em;
+	font-weight     : bold;
+	letter-spacing  : 0.6px;
+	color           : $color-text;
+	background-color: $color-accent2;
+}
+
+.nav__item {
+	box-sizing: border-box;
+}
+
+.nav__link {
+	padding        : 10px 0;
+	display        : block;
+	text-decoration: none;
+	font-size      : 1.2em;
+	font-weight    : bold;
+	letter-spacing : 0.6px;
+	color          : $color-text;
+	cursor         : pointer;
+	box-sizing     : border-box;
+	
+	&:active {
+		background-color: $color-accent1;
+	}
+}
+
+.nav__button {
+	margin-top      : 15px;
+	padding         : 7px 14px;
+	display         : block;
+	text-decoration : none;
+	font-size       : 1.2em;
+	font-weight     : bold;
+	letter-spacing  : 0.6px;
+	color           : $color-text-accent2;
+	background-color: $color-main;
+	border          : 1px solid $color-text;
+	cursor          : pointer;
+	transition      : .5s;
+
+	&:focus,
+	&:hover {
+		color           : $color-text;
+		background-color: $color-accent2;
+		transition      : .5s;
+	}
+	
+	&:active {
+		background-color: $color-accent1;
+	}
+}
+
+.nav__item__button {
+	position: relative;
+	z-index : z('nav__item__button');
+}
+
+
+@media (max-width: $max-desktop) {
+
+	.nav__item {
+		height    : 45px;
+		color     : $color-text;
+		animation : nav-menu-open .7s;
+		transition: .7s;
+	}
+
+	.nav_close .nav__item:not(:last-child) {
+		height    : 0;
+		animation : nav-menu-close .7s;
+		transition: .7s;
+	}
+
+	.nav_close .nav__item__button {
+		height: auto;
+	}
+
+	.nav_animate-open .nav__link {
+		animation: .7s nav-menu-open;
+	}
+
+	.nav_animate-close .nav__link {
+		animation: .7s nav-menu-close;
+	}
+
+	.nav__item:first-child .nav__link {
+		padding-top: 30px;
+	}
+
+	@keyframes nav-menu-open {
+		0%   { color: $color-accent2; }
+		70%  { color: $color-accent2; }
+		71%  { color: $color-accent2; }
+		100% { color: $color-text; }
+	}
+
+	@keyframes nav-menu-close {
+		0%   { color: $color-text; }
+		30%  { color: $color-accent2; }
+		100% { color: $color-accent2; }
+	}
+
+	.nav__button {
+		position: absolute;
+		right   : 10px;
+		left    : 10px;
+		z-index : 2;
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.nav {
+		@include flex(row, stretch);
+	}
+
+	.nav__button-toggle {
+		display: none;
+	}
+
+	.nav__item:first-of-type .nav__link {
+		padding-left: 62px;
+	}
+
+	.nav__link {
+		padding: 32px 33px 28px;
+		height : 100%;
+	}
+
+	.nav__link span {
+		position: relative;
+
+		&::before {
+			position        : absolute;
+			display         : block;
+			content         : "";
+			bottom          : -10px;
+			left            : 0;
+			right           : 0;
+			height          : 1px;
+			background-color: $color-text;
+			transform       : scale(0);
+			transition      : .5s;
+		}
+	}
+
+	.nav__link:focus span::before,
+	.nav__link:hover span::before {
+		transform : scale(1);
+		transition: .5s;
+	}
+
+	.nav__item_button {
+		margin-left: auto;
+		padding    : 23px 9px;
+		// flex-grow  : 1;
+	}
+
+	.nav__button {
+		margin-top: 0;
+	}
+}

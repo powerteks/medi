@@ -1,0 +1,55 @@
+.article {
+	padding-left    : $indent;
+	padding-right   : $indent;
+
+	@include flex(column, stretch);
+
+	background-color: $color-accent1;
+}
+
+.article-text {
+	margin-bottom: 10px;
+	font-size    : 1.75em;
+	font-weight  : bold;
+}
+
+.button-arrow_article {
+	margin-top     : 24px;
+}
+
+.article-img {
+	margin-top: auto;
+}
+
+.article-img .image {
+	margin-top: 40px;
+	width     : 100%;
+}
+
+@media (min-width: $min-tablet) {
+
+	.article {
+		padding-right: 0;
+		height       : 100%;
+	}
+
+	.article-body {
+		padding: 0 40px;
+	}
+
+	.article-img .image {
+		margin-top: 45px;
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.article {
+		padding-left: 0;
+	}
+
+	.article-text {
+		font-size    : 2.15em;
+		margin-bottom: 24px;
+	}
+}

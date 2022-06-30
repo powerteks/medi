@@ -1,0 +1,194 @@
+.menu-footer {
+	@include flex(row, stretch);
+	@include reset-list;
+	
+	position   : relative;
+	flex-wrap  : wrap;
+	
+	&::before {
+		display         : block;
+		position        : absolute;
+		content         : "";
+		top             : 0;
+		left            : 0;
+		width           : 100%;
+		height          : 1px;
+		background-color: $color-text-accent1;
+	}
+}
+
+.menu-footer__item {
+	position : relative;
+	flex-grow: 1;
+
+	&:first-child::before,
+	&::after {
+		position        : absolute;
+		display         : block;
+		content         : "";
+		top             : 0;
+		left            : 0;
+		bottom          : 0;
+		width           : 1px;
+		background-color: $color-text-accent1;
+	}
+
+	&::after {
+		left : unset;
+		right: 0;
+	}
+}
+
+.menu-footer__item__block {
+	order: 1;
+}
+
+.menu-footer__infoblock {
+	margin    : 0;
+	padding   : 10px 10px 0;
+	width     : 100%;
+	font-size : 0.85em;
+	color     : $color-text-accent3;
+	flex-grow : 1;
+	box-sizing: border-box;
+	
+	&::before {
+		display         : block;
+		position        : absolute;
+		content         : "";
+		top             : 0;
+		left            : 0;
+		width           : 100%;
+		height          : 1px;
+		background-color: $color-text-accent1;
+	}
+}
+
+.menu-footer__link {
+	padding        : 10px;
+	display        : inline-block;
+	position       : relative;
+	font-size      : 0.85em;
+	text-decoration: none;
+	text-align     : center;
+
+	&::before {
+		position        : absolute;
+		display         : block;
+		content         : "";
+		left            : 10px;
+		right           : 10px;
+		bottom          : 10px;
+		height          : 1px;
+		background-color: $color-text-accent3;
+		transition      : .5s;
+	}
+
+	&:focus::before,
+	&:hover::before {
+		bottom    : 5px;
+		height    : 2px;
+		transition: .5s;
+	}
+	
+	&:active {
+		color           : $color-text-accent3;
+		background-color: $color-accent2;
+		box-shadow      : none;
+	}
+}
+
+.menu-footer__item__visually-impaired {
+	width : 20%;
+	height: 20vw;
+}
+
+.menu-footer__item__social {
+	width: 80%;
+}
+
+@media (min-width: $min-tablet) {
+	
+	.menu-footer {
+		flex-wrap: nowrap;
+	}
+
+	.menu-footer__item__block {
+		@include flex(row, stretch);
+		
+		width: 50%;
+		order: 0;
+	}
+
+	.menu-footer__infoblock {
+	
+		&::before {
+			display: none;
+		}
+	}
+
+	.menu-footer__item__visually-impaired {
+		width : 10%;
+		height: auto;
+	}
+
+	.menu-footer__item__social {
+		width: 40%;
+	}
+
+	// .menu-footer__link {
+	// 	margin: 0 0 10px;
+	// }
+}
+
+@media (min-width: $min-desktop) {
+
+	.menu-footer {
+		margin-top : 57px;
+		margin-left: 0;
+		width      : auto;
+	}
+
+	.menu-footer__item__visually-impaired {
+		width: 25.7%;
+	}
+	
+	.menu-footer__item__social {
+		width    : 25%;
+		order    : 0;
+		flex-grow: 0;
+	}
+
+	.menu-footer__info {
+		padding: 0 25px;
+
+		@include flex(row, stretch);
+	}
+
+	.menu-footer__infoblock {
+		margin-top: 12px;
+		padding   : 10px 0 0;
+		width     : 43%;
+	}
+
+	.menu-footer__link {
+		margin         : 12px 0 12px 10px;
+		padding        : 26px 18px 20px;
+		position       : relative;
+		text-decoration: none;
+		text-align     : center;
+		font-size      : 0.86em;
+		flex-grow      : 1;
+
+		&::before {
+			left            : 45px;
+			right           : 45px;
+			bottom          : 24px;
+		}
+
+		&:focus::before,
+		&:hover::before {
+			bottom    : 20px;
+		}
+	}
+}

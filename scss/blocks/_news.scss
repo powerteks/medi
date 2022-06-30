@@ -1,0 +1,169 @@
+.news {
+	margin-top      : 50px;
+	position        : relative;
+
+	@include flex(column);
+
+	background-color: $color-accent2;
+	transition      : .7s;
+}
+
+
+.title_news {
+	margin-left     : 40px;
+	background-color: $color-accent1;
+}
+
+.news__menu-list {
+	@include reset-list;
+
+	padding-bottom: 20px;
+}
+
+.news__button {
+	padding         : 10px 15px;
+	display         : block;
+	width           : 100%;
+	text-align      : left;
+	font-family     : $main-font-family;
+	font-size       : 1.28em;
+	color           : $color-text;
+	background-color: $color-accent2;
+	border          : none;
+	cursor          : pointer;
+	transition      : .5s;
+
+	&:focus,
+	&:hover {
+		box-shadow: inset 20px 0 0 0 $color-accent1;
+		transition: .5s;
+	}
+	
+	&:active {
+		background-color: $color-accent1;
+		box-shadow      : none;
+		animation       : news-active .2s;
+	}
+}
+
+@keyframes news-active {
+	0%   {background: linear-gradient(90deg, $color-accent1 0%, $color-accent2 100%);}
+	10%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 10%, $color-accent2 100%);}
+	20%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 20%, $color-accent2 100%);}
+	30%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 30%, $color-accent2 100%);}
+	40%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 40%, $color-accent2 100%);}
+	50%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 50%, $color-accent2 100%);}
+	60%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 60%, $color-accent2 100%);}
+	70%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 70%, $color-accent2 100%);}
+	80%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 80%, $color-accent2 100%);}
+	90%  {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 90%, $color-accent2 100%);}
+	100% {background: linear-gradient(90deg, $color-accent2 0%, $color-accent1 100%);}
+}
+
+.news__button_active {
+	background-color: $color-accent1;
+}
+
+.news__block-list {
+	@include reset-list;
+
+	background-color: $color-accent3;
+}
+
+.news__block {
+	padding         : 15px;
+	display         : none;
+	color           : $color-text-accent2;
+	background-color: $color-accent3;
+	transition      : .7s;
+}
+
+.news__block_active {
+	display: block;
+}
+
+.news__title {
+	margin-top   : 15px;
+	margin-bottom: 10px;
+	font-family  : $font-family-2;
+	font-size    : 1.7em;
+	font-weight  : normal;
+}
+
+.news__list {
+	@include reset-list;
+
+	padding-left  : 21px;
+	padding-bottom: 30px;
+}
+
+.news__list-item {
+	margin-bottom: 14px;
+	position     : relative;
+
+	&::before {
+		display         : block;
+		position        : absolute;
+		content         : "";
+		top             : 7px;
+		left            : -20px;
+		width           : 6px;
+		height          : 6px;
+		background-color: $color-accent1;
+		border-radius   : 50%;
+	}
+}
+
+@media (min-width: $min-tablet) {
+
+	.news {
+		@include flex( row, stretch );
+	}
+
+	.news__button-block {
+		width: 40%;
+	}
+
+	.news__button {
+		padding   : 35px 10px;
+		box-sizing: border-box;
+	}
+
+	.news__menu-list {
+		padding-bottom: 0;
+	}
+	
+	.news__title {
+		margin-top   : 35px;
+		margin-bottom: 25px;
+	}
+
+	.news__block-list {
+		width: 60%;
+	}
+	
+	.news__block {
+		padding   : 15px 40px 30px;
+		box-sizing: border-box;
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.news {
+		margin-top: 80px;
+	}
+
+	.news__button-block {
+		width: 40.9%;
+	}
+
+	.news__button {
+		padding    : 35px 40px;
+		line-height: 1.5;
+	}
+
+	.news__block {
+		padding : 0 60px;
+	}
+}

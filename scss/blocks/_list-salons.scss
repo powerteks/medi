@@ -1,0 +1,85 @@
+.list-salons {
+	@include reset-list;
+
+	position        : absolute;
+	display         : block;
+	left            : -25vw;
+	bottom          : 1px;
+	width           : 100vw;
+	height          : 0;
+	color           : $color-text-accent2;
+	background-color: $color-main;
+	box-sizing      : border-box;
+	transform       : translateY(100%);
+	transition      : .5s;
+	overflow        : hidden;
+	z-index         : z('list-salons');
+}
+
+.list-salons_show {
+	bottom    : 1px;
+	height    : 207px;
+	transition: .5s;
+	border    : 1px solid $color-accent3;
+	border-top: none;
+}
+
+.list-salons__link {
+	position       : relative;
+	display        : block;
+	padding        : 10px 0;
+	text-decoration: none;
+	text-align     : center;
+	font-weight    : bold;
+	color          : $color-text-accent2;
+
+	&::before {
+		display         : block;
+		position        : absolute;
+		content         : "";
+		bottom          : 7px;
+		left            : 33px;
+		right           : 33px;
+		height          : 1px;
+		background-color: $color-text-accent2;
+		transform       : scale(0);
+		transition      : .5s;
+	}
+
+	&:focus::before,
+	&:hover::before {
+		transform : scale(1);
+		transition: .5s;
+	}
+}
+
+@media (min-width: $min-tablet) {
+
+	.list-salons {
+		left     : 1px;
+		width    : 50vw;
+		transform: translate( -37.5%, 100% );
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.list-salons {
+		left     : 0;
+		right    : 0;
+		width    : 100%;
+		transform: translate( 0, 100% );
+	}
+
+	.link-salons:focus ~ .list-salons,
+	.link-salons:hover ~ .list-salons,
+	.list-salons:focus,
+	.list-salons:hover,
+	.list-salons_focus {
+		bottom    : 1px;
+		height    : 207px;
+		transition: .5s;
+		border    : 1px solid $color-accent3;
+		border-top: none;
+	}
+}

@@ -1,0 +1,211 @@
+.form {
+	padding: 15px;
+}
+
+.form__block {
+	margin : 0;
+	padding: 0;
+	border : none;
+}
+
+.form__label {
+	display: block;
+}
+
+.form__label_inline {
+	display: inline-block;
+	width  : 47%;
+}
+
+.form__label_margin {
+	margin-right: 4.7%;
+}
+
+.form__name {
+	margin     : 20px 0 5px;
+	font-weight: bold;
+	font-size  : 1.2em;
+	color      : $color-accent1;
+}
+
+.form__input {
+	padding         : 10px;
+	display         : block;
+	width           : 100%;
+	font-family     : $main-font-family;
+	font-size       : 1.2em;
+	letter-spacing  : 1.1px;
+	color           : $color-accent1;
+	box-sizing      : border-box;
+	background-color: $color-accent3;
+	border          : 2px solid $color-accent1;
+	cursor          : pointer;
+
+	&::placeholder {
+		font-family: $main-font-family;
+		font-size  : 1em;
+		color      : $color-accent1;
+	}
+
+	&:focus,
+	&:hover {
+		color           : $color-accent1;
+		background-color: $color-accent2;
+		box-shadow      : none;
+	}
+}
+
+.form__select {
+	@include flex( column, center );
+}
+
+.form__select-wrapper {
+	position: relative;
+}
+
+.form__select-native,
+.form__select-body {
+	position  : relative;
+	width     : 100%;
+	height    : 43px;
+	box-sizing: border-box;
+}
+
+.form__select-body {
+	position: absolute;
+	top     : 0;
+	left    : 0;
+	display : none;
+}
+
+@media (hover: hover) {
+
+	.form__select-body {
+		display: block;
+	}
+}
+
+.form__select,
+.form__select-wrapper {
+	position: relative;
+}
+
+.form__select-native,
+.form__trigger {
+	font-weight     : bold;
+	background-color: $color-accent3;
+	border          : 2px solid $color-accent1;
+	box-sizing      : border-box;
+}
+
+.form__select-native {
+	padding         : 10px;
+	background-color: $color-accent3;
+	border          : 2px solid $color-accent1;
+	z-index         : -1;
+
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+.form__trigger {
+	padding   : 10px;
+	position  : relative;
+	width     : 100%;
+	height    : 43px;
+	color     : $color-accent1;
+	cursor    : pointer;
+	transition: .5s;
+
+	&::after {
+		position    : absolute;
+		content     : "";
+		top         : 50%;
+		right       : 20px;
+		width       : 10px;
+		height      : 10px;
+		border      : 3px solid $color-accent1;
+		border-top  : none;
+		border-right: none;
+		transform   : translateY(-75%) rotate(-45deg);
+		transition  : .5s;
+	}
+
+	&:hover {
+		color           : $color-text;
+		background-color: $color-accent2;
+		transition      : .5s;
+	}
+}
+
+.form__options {
+	display         : none;
+	position        : absolute;
+	top             : 55px;
+	left            : 0;
+	width           : 100%;
+	background-color: $color-accent2;
+	border          : 2px solid $color-accent1;
+	box-sizing      : border-box;
+	z-index         : 1;
+
+	.form__select-body.form__option_active & {
+		display: block;
+	}
+}
+
+.form__option {
+	padding     : 10px;
+	padding-left: 35px;
+	position    : relative;
+
+	&:not(:last-of-type)::after {
+		position        : absolute;
+		content         : "";
+		bottom          : 0;
+		left            : 15px;
+		right           : 15px;
+		height          : 1px;
+		background-color: $color-accent1;
+	}
+}
+
+.form__option.form__option_active {
+	position: relative;
+
+	&::before {
+		display            : block;
+		position           : absolute;
+		content            : "";
+		left               : 10px;
+		width              : 15px;
+		height             : 10px;
+		border             : 2px solid $color-main;
+		border-top         : none;
+		border-right       : none;
+		transform          : rotate(-45deg);
+	}
+}
+
+.form__option_active .form__trigger:hover::after {
+	transform : translateY(-25%) rotate(135deg);
+	transition: .5s;
+}
+
+.form__option.form__option_hover,
+.form__option:hover {
+	color           : $color-text;
+	background-color: $color-accent1;
+	cursor          : default;
+}
+
+.form__input_date,
+.form__input_time {
+	height: 47px;
+}
+
+.button_making {
+	margin : 30px auto;
+	padding: 11px 40px;
+}

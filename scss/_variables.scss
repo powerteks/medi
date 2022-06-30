@@ -1,0 +1,70 @@
+// sizes and indents
+$main-unit: 1296px;
+
+// media
+$desktop: 1300px;
+$tablet : 768px;
+
+$min-desktop: $desktop;
+$max-desktop: $desktop - 1;
+
+$min-tablet: $tablet;
+$max-tablet: $tablet - 1;
+
+
+// fonts
+$main-font-family: "Gilroy", "Arial", sans-serif;
+$font-family-2   : "Gilroy Bold", "Arial", sans-serif;
+$mobile-font-size: 12px;
+$main-font-size  : 14px;
+$main-line-height: 1.5;
+
+// color
+$color-main   : #ffffff;
+$color-accent1: #00868A;
+$color-accent2: #4FBFA5;
+$color-accent3: #E6F3F3;
+
+$color-text        : #ffffff;
+$color-text-accent1: #B3B3B3;
+$color-text-accent2: #333333;
+$color-text-accent3: #020202;
+$color-text-accent4: #323232;
+
+// another
+$indent : 10px;
+
+//mixins
+@mixin flex( $fx-direction, $fx-justify: flex-start ) {
+	display        : flex;
+	flex-direction : $fx-direction;
+	justify-content: $fx-justify;
+}
+
+@mixin reset-indent {
+	margin : 0;
+	padding: 0;
+}
+
+@mixin reset-list {
+	margin    : 0;
+	padding   : 0;
+	list-style: none;
+}
+
+//function
+@function z( $layer ) {
+	@return map-get( $z-indexes, $layer );
+}
+
+$z-indexes: (
+	'advantages__img'    : -1,
+	'offers__block-title': 1,
+	'offers__title'      : 2,
+	'nav-item__button'   : 2,
+	'slider__nav'        : 20,
+	'list-salons'        : 50,
+	'overlay'            : 99,
+	'modal'              : 100,
+	'focus'              : 999,
+);

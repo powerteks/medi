@@ -1,0 +1,69 @@
+.list-social {
+	@include reset-list;
+	@include flex(row, flex);
+
+	height: 100%;
+}
+
+.list-social__item {
+	position  : relative;
+	width     : 100%;
+	height    : 100%;
+	box-sizing: border-box;
+
+	&:not(:first-child)::before {
+		display         : block;
+		position        : absolute;
+		content         : "";
+		top             : 0;
+		left            : 0;
+		bottom          : 0;
+		width           : 1px;
+		background-color: $color-text-accent1;
+	}
+}
+
+.button-menu_list-social {
+	position           : relative;
+	width              : 100%;
+	height             : 100%;
+	background-position: center;
+	background-size    : 60% auto;
+	background-repeat  : no-repeat;
+
+	.list-social_footer &:focus,
+	.list-social_footer &:hover {
+		box-shadow: inset 0 5px 0 0 $color-accent1;
+		transition: .5s;
+	}
+}
+
+.button-menu_list-social_vk {
+	background-image: url("../img/vk.svg");
+}
+
+.button-menu_list-social_youtube {
+	background-image: url("../img/youtube.svg");
+}
+
+.button-menu_list-social_facebook {
+	background-image: url("../img/facebook.svg");
+}
+
+.button-menu_list-social_instagram {
+	background-image: url("../img/instagram.svg");
+}
+
+@media (min-width: $min-tablet) {
+
+	.button-menu_list-social {
+		background-size: 30% auto;
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.button-menu_list-social {
+		background-size: auto;
+	}
+}

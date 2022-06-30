@@ -1,0 +1,220 @@
+.button {
+	padding         : 11px 25px;
+	position        : relative;
+	display         : block;
+	width           : min-content;
+	text-align      : center;
+	text-decoration : none;
+	text-transform  : uppercase;
+	font-family     : $main-font-family;
+	font-size       : 1em;
+	font-weight     : bold;
+	letter-spacing  : 0.5px;
+	color           : $color-text;
+	background-color: $color-accent1;
+	border          : none;
+	cursor          : pointer;
+	transition      : .5s;
+
+	&:focus,
+	&:hover {
+		color           : $color-accent1;
+		background-color: $color-accent3;
+		box-shadow      : none;
+		transition      : .5s;
+	}
+	
+	&:active {
+		box-shadow      : inset 0 0 3px 3px $color-main;
+		background-color: $color-accent2;
+	}
+}
+
+.button-menu {
+	padding        : 5px;
+	display        : block;
+	height         : 12.5vw;
+	text-decoration: none;
+	text-align     : center;
+	font-size      : 1.15em;
+	font-weight    : bold;
+	color          : $color-text-accent2;
+	box-sizing     : border-box;
+	transition     : .5s;
+
+	&:focus,
+	&:hover {
+		box-shadow: inset 0 -5px 0 0 $color-accent1;
+		transition: .5s;
+	}
+
+	&:active {
+		background-color: $color-accent1;
+	}
+}
+
+.button_visually-impaired {
+	padding    : 5px;
+	display    : block;
+	height     : 12.5vw;
+	font-weight: normal;
+	box-sizing : border-box;
+	text-align : center;
+	box-sizing : border-box;
+	
+	& .vh-desktop {
+		background-image   : url("../../img/visually-impaired.svg");
+		background-position: center center;
+		background-size    : 80% 80%;
+		background-repeat  : no-repeat;
+	}
+
+	&:active .vh-phone {
+
+		background-color: $color-accent2;
+	}
+}
+
+.button-menu_top-hover {
+	height: 20vw;
+}
+
+.button-arrow {
+	padding         : 9px 70px 7px;
+	position        : relative;
+	display         : block;
+	width           : min-content;
+	text-decoration : none;
+	text-transform  : uppercase;
+	font-size       : 1.1em;
+	font-weight     : bold;
+	letter-spacing  : 1px;
+	color           : $color-text;
+	background-color: $color-accent1;
+
+	&:focus,
+	&:hover {
+		box-shadow: none;
+	}
+	
+	&:active {
+		background-color: $color-accent2;
+	}
+
+	&:focus .button-arrow__block,
+	&:hover .button-arrow__block {
+		width     : 100%;
+		transition: .5s;
+	}
+}
+	
+.button-arrow__block {
+	position           : absolute;
+	display            : inline-block;
+	top                : 0;
+	left               : 0;
+	width              : 48px;
+	height             : 38px;
+	border             : 1px solid $color-text;
+	background-image   : url("../img/arrow-20.svg");
+	background-position: right 13px center;
+	background-repeat  : no-repeat;
+	transition         : .5s;
+}
+
+@media (min-width: $min-tablet) {
+
+	.button-menu {
+		height: 70px;
+	}
+
+	.button_visually-impaired {
+		width : auto;
+		height: 70px;
+	}
+
+	.button-menu_top-hover {
+		height: 100%;
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.button {
+		font-size : 1.32em;
+	}
+
+	.button-menu {
+		padding: 34px 0 31px;
+		height : 100%;
+	}
+
+	.button_visually-impaired {
+		padding        : 24px 0 25px;
+		height         : auto;
+		text-decoration: none;
+		text-transform : uppercase;
+		transition     : .5s;
+		flex-grow      : 1;
+
+		&:focus,
+		&:hover {
+			box-shadow: inset 0 -5px 0 0 $color-accent1;
+		}
+	}
+
+	.button_visually-impaired .vh-phone {
+		padding            : 11px 15px 9px 49px;
+		display            : inline-block;
+		color              : $color-text;
+		background-color   : $color-accent1;
+		background-image   : url("../../img/simple-line-icons_eye.svg");
+		background-position: 15px 10px;
+		background-repeat  : no-repeat;
+	}
+
+	.button-menu__icon {
+		position: relative;
+
+		&::before {
+			position        : absolute;
+			display         : block;
+			content         : "";
+			top             : 0;
+			left            : 12px;
+			width           : 20px;
+			height          : 20px;
+			border-radius   : 50%;
+			background-color: $color-accent2;
+		}
+
+		&::after {
+			position          : absolute;
+			display           : block;
+			content           : "";
+			top               : 8px;
+			left              : 18px;
+			width             : 0;
+			height            : 0;
+			border            : 0 solid transparent;
+			border-left-width : 4px;
+			border-right-width: 4px;
+			border-top        : 6px solid #ffffff;
+		}
+	}
+
+	.button-menu_top-hover {
+		width: auto;
+
+		&:focus,
+		&:hover {
+			box-shadow: inset 0 5px 0 0 $color-accent1;
+			transition: .5s;
+		}
+	}
+
+	.button-arrow {
+		color     : $color-text;
+		cursor    : pointer;
+	}
+}

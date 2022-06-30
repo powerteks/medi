@@ -1,0 +1,29 @@
+.main-page-block__item {
+	padding-bottom: 15px;
+	position      : relative;
+}
+
+@media (min-width: $min-tablet) {
+
+	.main-page-block {
+		@include flex(row, stretch);
+	}
+
+	.main-page-block__item {
+		padding   : 0;
+		width     : 59.4%;
+		box-sizing: border-box;
+	}
+
+	.main-page-block__item_left {
+		width           : 40.6%;
+		background-color: $color-accent1;
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.main-page-block__item {
+		padding-bottom: 0;
+	}
+}

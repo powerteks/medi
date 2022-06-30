@@ -1,0 +1,148 @@
+.modal {
+	margin          : auto;
+	display         : none;
+	position        : absolute;
+	top             : 0;
+	left            : 0;
+	right           : 0;
+	width           : 100%;
+	background-color: $color-main;
+	transform       : translateY(-200%);
+	z-index         : z('modal');
+}
+
+.modal_no-show {
+	display  : block;
+	transform: translateY(0%);
+	animation: modal_noshow .7s;
+}
+
+.modal_active {
+	display  : block;
+	transform: translateY(0%);
+	animation: modal_show .7s;
+}
+
+@keyframes modal_show {
+	0%   {transform: translateY(-200%);}
+	100% {transform: translateY(0%);}
+}
+
+@keyframes modal_noshow {
+	0%   {transform: translateY(0%);}
+	100% {transform: translateY(-200%);}
+}
+
+.modal__body {
+	position: relative;
+}
+
+.modal__button-close {
+	position: absolute;
+	top     : 3px;
+	right   : 3px;
+	width   : $mobile-font-size * 3.5;
+	height  : $mobile-font-size * 3.5;
+	cursor  : pointer;
+	z-index : 1;
+
+	&::before,
+	&::after {
+		display         : block;
+		position        : absolute;
+		content         : "";
+		top             : 20px;
+		left            : 8px;
+		width           : 25px;
+		height          : 2px;
+		background-color: $color-text-accent2;
+		transform       : rotate(45deg);
+		transition      : .5s;
+	}
+
+	&::after {
+		transform : rotate(-45deg);
+		transition: .5s;
+	}
+
+	&:focus::before,
+	&:hover::before {
+		transform       : rotate(225deg);
+		transition      : .5s;
+	}
+
+	&:focus::after,
+	&:hover::after {
+		transform : rotate(135deg);
+		transition: 1s;
+	}
+
+	&:active::before,
+	&:active::after {
+		transform : rotate(180deg);
+		transition: .3s;
+	}
+}
+
+.modal__header {
+	padding : 15px 15px;
+	position: relative;
+
+	&:before {
+		display         : block;
+		position        : absolute;
+		content         : "";
+		left            : 0;
+		right           : 0;
+		bottom          : 0;
+		width           : 100%;
+		height          : 1px;
+		background-color: $color-accent1;
+	}
+}
+
+.modal__title {
+	margin        : 0;
+	text-transform: uppercase;
+	font-size     : 1.5em;
+	line-height   : 1;
+	color         : $color-text-accent3;
+}
+
+@media (min-width: $min-tablet) {
+
+	.modal {
+		top      : 50vh;
+		width    : 80vw;
+		transform: translateY(-300%);
+	}
+
+	.modal_no-show {
+		display  : block;
+		transform: translateY(-50%);
+		animation: modal_noshow .7s;
+	}
+	
+	.modal_active {
+		display  : block;
+		transform: translateY(-50%);
+		animation: modal_show .7s;
+	}
+	
+	@keyframes modal_show {
+		0%   {transform: translateY(-300%);}
+		100% {transform: translateY(-50%);}
+	}
+	
+	@keyframes modal_noshow {
+		0%   {transform: translateY(-50%);}
+		100% {transform: translateY(-300%);}
+	}
+}
+
+@media (min-width: $min-desktop) {
+
+	.modal {
+		width: 500px;
+	}
+}
